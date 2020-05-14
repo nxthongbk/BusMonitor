@@ -1,0 +1,35 @@
+executables:
+{
+	location_data_fx30 = ( LOCATION_DATA_FX30Component )
+}
+
+processes:
+{
+	envVars:
+	{
+		LE_LOG_LEVEL = DEBUG
+	}
+
+	run:
+	{
+		( location_data_fx30 )
+	}
+
+	maxCoreDumpFileBytes: 512K
+	maxFileBytes: 512K
+}
+bindings:
+
+
+{   
+	location_data_fx30.LOCATION_DATA_FX30Component.le_avdata -> avcService.le_avdata
+    location_data_fx30.LOCATION_DATA_FX30Component.le_avc -> avcService.le_avc
+    location_data_fx30.LOCATION_DATA_FX30Component.le_mrc -> modemService.le_mrc
+    location_data_fx30.LOCATION_DATA_FX30Component.le_posCtrl -> positioningService.le_posCtrl
+    location_data_fx30.LOCATION_DATA_FX30Component.le_pos -> positioningService.le_pos
+    location_data_fx30.LOCATION_DATA_FX30Component.le_sms -> modemService.le_sms
+    location_data_fx30.LOCATION_DATA_FX30Component.le_ulpm -> powerMgr.le_ulpm
+    location_data_fx30.LOCATION_DATA_FX30Component.le_bootReason -> powerMgr.le_bootReason
+}
+version: 1.0.8
+maxFileSystemBytes: 512K

@@ -1,0 +1,39 @@
+requires:
+{
+    api:
+    {
+        airVantage/le_avdata.api
+        airVantage/le_avc.api
+        modemServices/le_mrc.api
+        modemServices/le_sms.api
+        positioning/le_posCtrl.api
+        positioning/le_pos.api
+        le_ulpm.api
+        le_bootReason.api
+    }
+}
+sources:
+{
+	LOCATION_DATA_FX30Component.c
+}
+assets:
+{
+    Room = 
+    {
+        variables:
+        {
+            string  Name
+            int   Temperature
+            bool    IsAC_on
+            int  longitude
+            int  latitude
+            int  speed
+        }
+
+  
+        commands:
+        {
+            TurnOffAC
+        }
+    }
+}
